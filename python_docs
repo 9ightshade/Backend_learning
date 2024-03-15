@@ -1,0 +1,80 @@
+WHAT IS PYTHON?
+python
+
+Thousands of students start their coding journey right here with Python. We think it's the best programming language to get started with. Python is famous for being a simple language that's easy to read and write.
+
+However, just because it's simple that doesn't mean it's not useful! Python is an extremely popular language in the industry, and is well-known for:
+
+Backend web servers
+DevOps and cloud engineering
+Machine learning
+Scripting and automation
+etc...
+On the other hand, it's not particularly well-known for front-end work. While it's possible to do so, Python isn't typically used to build visual user interfaces.
+
+
+WHAT IS "CODE"?
+Code is just a series of instructions that computers can follow. Computers obey each instruction, one after another.
+
+Programs can be comprised of many instructions. Like many. Like millions.
+
+Addition is one of the most common instructions in coding.
+
+PRINTING NUMBERS
+print() can print text using quotes:
+
+print("some text here")
+Copy icon
+but it can also print numbers without quotes:
+
+print(1)
+Copy icon
+and you can do math directly inside the parentheses:
+
+print(1 + 2)
+
+MULTIPLE INSTRUCTIONS
+Code runs in order, starting at the top of the program. For example:
+
+print("this prints first")
+print("this prints second")
+print("this prints last")
+Copy icon
+Each print() instruction prints on a new line.
+SYNTAX ERRORS
+Syntax is jargon for "valid code that the computer can understand". For example, the following code is invalid syntax:
+
+prnt("hello world")
+Copy icon
+prnt() is not a valid function because "print" is spelled incorrectly. As a result, an error will be thrown and the code won't execute.
+
+VARIABLES
+Variables are how we store data in our program. So far we've been directly printing data by passing it directly into the print() function.
+
+Now we are going to learn to save the data in variables so we can use and change it before we need to print it.
+
+A variable is a name that we define that will point to some data. For example, I could define a new variable called my_height and set its value to 100. I could also define a variable called my_name and set it equal to "Lane".
+
+CREATING VARIABLES
+To create a new variable in Python we use the following syntax:
+
+my_new_variable_two = 2
+this_can_be_called_anything = 3
+
+COMMENTS
+Comments don't run like code, they are ignored by the computer. Comments are useful for adding reminders or explaining what a piece of code does in plain English.
+
+SINGLE LINE COMMENT
+# speed is a variable describing how fast your player moves
+speed = 2
+Copy icon
+MULTI-LINE COMMENTS (AKA DOCSTRINGS)
+You can use triple quotes to start and end multi-line comments as well:
+
+"""
+    the code found below
+    will print 'Hello, World!' to the console
+"""
+print('Hello, World!')
+Copy icon
+This is useful if you don't want to add the # to the start of each line when writing paragraphs of comments.
