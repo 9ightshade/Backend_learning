@@ -397,3 +397,35 @@ There is a problem the get_title function! It's supposed to calculate the title 
 
 Fix the function so that it returns the title value instead of printing it.
 
+
+ASSIGNMENT
+Complete the enchant_and_attack function. It creates a new "enchanted" name for a weapon and calculates how much damage the enchanted weapon will deal to a victim.
+
+It accepts 3 parameters:
+
+player_health: integer
+damage: integer
+weapon: string
+It should do the following things in the function body:
+
+Calculate and store the "enchanted damage" in a new variable. The enchanted damage should be the input damage plus 10.
+Calculate and store the "new health" in a new variable. The new health should be the input player_health minus the enchanted damage.
+Create a new variable called enchanted_weapon. It should be the input weapon with the string "enchanted " added to the beginning of it. For example:
+sword -> enchanted sword
+axe -> enchanted axe
+Return the enchanted weapon and the new health in that order.
+
+
+SCOPE
+Scope refers to where a variable or function name is available to be used. For example, when we create variables in a function (by giving names to our parameters for example), that data is not available outside of that function.
+
+For example:
+
+def subtract(x, y):
+    return x - y
+result = subtract(5, 3)
+print(x)
+# ERROR! "name 'x' is not defined"
+
+
+When the subtract function is called, we assign 5 to the variable x, but x only exists in the code within the subtract function. If we try to print x outside of that function, then we won't get a result. In fact, we'll get a big fat error.

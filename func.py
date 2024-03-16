@@ -125,3 +125,41 @@ def curse(weapon_damage):
     greater_cursed = (25/100) * weapon_damage
     return lesser_cursed, greater_cursed
 curse(2000)
+
+print("======================enchant and attack===============")
+
+#weapon type
+sword ="Longsword"
+spear = "wooden Spear"
+
+#damage for each weapon type
+spear_damage = 20 #spear damage
+sword_damage = 15 #sword damage
+
+def enchant_and_attack(health, damage, weapon):
+    enchanted_damage = damage + 10
+    new_health = health - enchanted_damage
+    enchanted_weapon = "Enchanted " + weapon
+    print(enchanted_weapon)
+    return enchanted_damage, new_health, enchanted_weapon
+
+enchant_and_attack(health, sword_damage, sword)
+
+print("========================find player health=============")
+
+player_level = 4
+
+def calculate_health(modifier):
+    return player_level * modifier
+
+
+def calculate_primary_stats(armor_bonus, modifier):
+    return armor_bonus + modifier + player_level
+
+
+# Don't touch below this line
+
+print(f"Character has {calculate_health(10)} max health.")
+
+print(f"Character has {calculate_primary_stats(3, 8)} primary stats.")
+
