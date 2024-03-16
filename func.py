@@ -104,3 +104,24 @@ def get_slashed(health, armor=0):
 #getting punched does 50 damage
 def get_punched(health, armor= 0):
     return health + armor -50
+
+print("=================================================")
+
+#function that takes first name, last name and job args and return title
+
+
+def get_title(first_name, last_name,job="necromancer"):
+    title = first_name + " " + last_name +" " + "the" + " " + job
+    print(title)
+    return title
+get_title(first_name, last_name)
+
+
+print("===================================================")
+
+#curse function to reduce damage of weapon
+def curse(weapon_damage):
+    lesser_cursed = (50/100) * weapon_damage
+    greater_cursed = (25/100) * weapon_damage
+    return lesser_cursed, greater_cursed
+curse(2000)
