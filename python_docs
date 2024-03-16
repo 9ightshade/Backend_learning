@@ -24,11 +24,11 @@ PRINTING NUMBERS
 print() can print text using quotes:
 
 print("some text here")
-Copy icon
+
 but it can also print numbers without quotes:
 
 print(1)
-Copy icon
+
 and you can do math directly inside the parentheses:
 
 print(1 + 2)
@@ -39,13 +39,13 @@ Code runs in order, starting at the top of the program. For example:
 print("this prints first")
 print("this prints second")
 print("this prints last")
-Copy icon
+
 Each print() instruction prints on a new line.
 SYNTAX ERRORS
 Syntax is jargon for "valid code that the computer can understand". For example, the following code is invalid syntax:
 
 prnt("hello world")
-Copy icon
+
 prnt() is not a valid function because "print" is spelled incorrectly. As a result, an error will be thrown and the code won't execute.
 
 VARIABLES
@@ -67,7 +67,7 @@ Comments don't run like code, they are ignored by the computer. Comments are use
 SINGLE LINE COMMENT
 # speed is a variable describing how fast your player moves
 speed = 2
-Copy icon
+
 MULTI-LINE COMMENTS (AKA DOCSTRINGS)
 You can use triple quotes to start and end multi-line comments as well:
 
@@ -76,5 +76,302 @@ You can use triple quotes to start and end multi-line comments as well:
     will print 'Hello, World!' to the console
 """
 print('Hello, World!')
-Copy icon
+
 This is useful if you don't want to add the # to the start of each line when writing paragraphs of comments.
+
+VARIABLE NAMES
+Variable names can't have spaces, they're continuous strings of characters.
+
+In Python you should use "snake_case" when creating variable names - it's become the "rule of thumb" for the language. By way of comparison, "camelCase" is where the beginning of each new word except the first is capitalized.
+
+CASING EXAMPLES
+NO CASING (PURE INSANITY)
+somevariablehere = 10
+
+CAMEL CASE
+someVariableHere = 10
+
+SNAKE CASE
+some_variable_here = 10
+
+BASIC VARIABLE TYPES
+In Python there are several basic data types.
+
+STRING TYPE
+"Strings" are raw text in coding speak. They are called "strings" because they are a list of characters strung together. Strings are declared in Python by using single quotes or double quotes. That said, for consistency's sake, we prefer double quotes.
+
+name_with_single_quotes = 'Shadow'
+name_with_double_quotes = "Shadow"
+
+NUMERIC TYPES
+Numbers aren't surrounded by quotes when created, but they can have decimals and negative signs.
+
+INTEGERS ARE NUMBERS WITHOUT A DECIMAL
+x = 5
+y = -5
+
+A "FLOAT" IS A NUMBER WITH A DECIMAL
+x = 5.2
+y = -5.2
+
+BOOLEAN TYPE
+A "Boolean" (or "bool") is a type that can only have one of two values: True or False. As you may have heard computers really only use 1's and 0's. These 1's and 0's are just Boolean values.
+
+is_tall = True
+is_short = False
+
+ASSIGNMENT
+player_health should be an integer and player_has_magic should be a boolean.
+
+
+F-STRINGS IN PYTHON
+You can create a string with dynamic values by using f-strings in Python. It's a beautiful syntax that I wish more programming languages used.
+
+num_bananas = 10
+print(f"You have {num_bananas} bananas")
+# You have 10 bananas
+Copy icon
+The opening quotes must be preceded by an f.
+Any variables within curly brackets have their values "interpolated" (injected) into the string.
+ASSIGNMENT
+Use an f-string to inject the dynamic values into the string:
+
+Replace NAME with the value of the name variable
+Replace RACE with the value of the race variable
+Replace AGE with the value of the age variable
+Do not "hard-code" the values into the string. For example, this is not the solution we're looking for (even though it happens to work in this case):
+
+print("Yarl is a dwarf who is 37 years old.")
+
+The problem with hard coding is that it doesn't work with values that change. What if we had multiple characters?
+
+TIP
+Punctuation matters! Make sure your output matches the expected output exactly
+
+
+NONETYPE VARIABLES
+Not all variables have a value. We can declare an "empty" variable by setting it to None.
+
+empty = None
+
+The value of empty in this instance is None until we use the assignment operator, =, to give it a value.
+
+NONE IS NOT A SPECIFIC STRING
+Note that the NoneType is not the same as a string with a value of "None":
+
+my_none = None # this is a None-type
+my_none = "None" # this is a string
+
+ASSIGNMENT
+Declare a variable named enemy and set it to None. Don't change the print(enemy) function.
+
+
+DYNAMIC TYPING
+Python is dynamically typed. All this means is that a variable can store any type, and that type can change.
+
+For example, if I make a number variable, I can later change that variable to a string:
+
+This is valid:
+
+speed = 5
+speed = "five"
+
+JUST BECAUSE YOU CAN DOESN'T MEAN YOU SHOULD!
+In almost all circumstances, it's a bad idea to change the type of a variable. The "proper" thing to do is to just create a new one. For example:
+
+speed = 5
+speed_description = "five"
+
+WHAT IF IT WEREN'T DYNAMICALLY TYPED?
+Languages that aren't dynamically typed are statically typed, such as Go (which you'll learn in a later course). In a statically typed language, if you try to assign a value to a variable of the wrong type, an error would crash the program.
+
+If Python were statically-typed, the first example from before would crash on the second line, speed = "five". The computer would give an error along the lines of you can't assign a string value ("five") to a number variable (speed)
+
+MATH WITH STRINGS
+Most of the math operators we went over earlier don't work with strings, aside from the * and addition operators. When working with strings the + operator performs a "concatenation".
+
+"Concatenation" is a fancy word that means the joining of two strings. You should prefer string interpolation with f-strings over concatenation.
+
+first_name = "Lane "
+last_name = "Wagner"
+full_name = first_name + last_name
+print(full_name)
+# prints "Lane Wagner"
+
+full_name now holds the value "Lane Wagner".
+
+Notice the extra space at the end of "Lane " in the first_name variable. That extra space is there to separate the words in the final result: "Lane Wagner".
+
+ASSIGNMENT
+We have a second player in our game!
+
+We need to tell each of our players how much health they have left.
+
+print Player 1's health: You have 1200 health using string concatenation and the variables provided
+print Player 2's health: You have 1100 health in the same way
+
+MULTI-VARIABLE DECLARATION
+We can save space when creating many new variables by declaring them on the same line:
+
+sword_name, sword_damage, sword_length = "Excalibur", 10, 200
+
+Which is the same as:
+
+sword_name = "Excalibur"
+sword_damage = 10
+sword_length = 200
+
+Any number of variables can be declared on the same line, and variables declared on the same line should be related to one another in some way so that the code remains easy to understand.
+
+We call code that's easy to understand "clean code".
+
+
+FUNCTIONS
+Functions allow us to reuse and organize code. For example, say we've written some code that calculates the area of a circle:
+
+radius = 5
+area = 3.14 * radius * radius
+
+That works! The problem is when we want to calculate the area of more circles, each with its own radius. We could just copy the code and change the variable names like this:
+
+radius = 5
+area1 = 3.14 * radius * radius
+
+radius2 = 7
+area2 = 3.14 * radius2 * radius2
+
+But don't we want to reuse our code? Why would we want to repeat our work? What if we wanted to calculate the area of thousands of circles??? That's where functions help.
+
+Instead, we can define a new function called area_of_circle using the def keyword.
+
+def area_of_circle(r):
+    pi = 3.14
+    result = pi * r * r
+    print(f"area of circle is: {result}")
+    return result
+
+The area_of_circle function takes one input and returns one output. The body of the function is indented and contains the code that will be run when the function is called. The return keyword tells the function to return the value that follows it as the output of the function. A function can have more than one return statement. The name of an input is called a parameter. In this case, it is r. The value of the input is called the argument.
+
+To "call" this function ("call a function" is a fancy phrase that just means "use a function") we can now pass in any number as the argument (in this case, 5) for the parameter r, and capture the output into a new variable:
+
+area = area_of_circle(5)
+print(area)
+# 78.5
+
+5 goes in as the input, r, the result is calculated, and 78.5 comes out as the output. Because the function is already defined, we can use it again and again with different inputs:
+
+area = area_of_circle(6)
+print(area)
+# 113.04
+
+ASSIGNMENT
+We need to calculate the size of a weapon's "attack area". With a 1.0 meter sword, for example, a player can attack in an area of 3.14 square meters around them. You can use the area_of_circle function to do that calculation.
+
+
+The spear_area variable should be set to the result of calling the area_of_circle function with the given spear_length as input.
+
+
+NONE RETURN
+When no return value is specified in a function, it will automatically return None. For example, maybe it's a function that prints some text to the console, but doesn't explicitly return a value. The following code snippets all return the same value, None:
+
+def my_func():
+    print("I do nothing")
+    return None
+
+def my_func():
+    print("I do nothing")
+    return
+
+def my_func():
+    print("I do nothing")
+
+MULTIPLE RETURN VALUES
+In Python, we can return more than one value from a function.
+
+First, we can return multiple values on one line by separating them with commas.
+
+# returns email, age, and status of the user
+def get_user():
+    return "name@domain.com", 21, "active"
+
+Second, when we call this function, we need to assign all the returned values to an equal number of variables by separating them with commas. The values will be assigned according to the order they are returned.
+
+# sets email, age, and status to values returned from get_user() function
+email, age, status = get_user()
+print(email, age, status)
+# name@domain.com 21 active
+
+ASSIGNMENT
+Complete the become_warrior function. It accepts 3 inputs:
+
+first_name: string
+last_name: string
+power: integer
+It should return 2 values:
+
+First, a string of this format: "first_name last_name the warrior"
+Second, the power input after adding 1 to it.
+For example:
+
+title, power = become_warrior("Aang", "Airbender", 100)
+print(title)
+# "Aang Airbender the warrior"
+print(power)
+# 101
+
+TIP
+You can use the + operator to concatenate strings together. For example:
+
+first_name = "Aang"
+last_name = "Airbender"
+full_name = first_name + " " + last_name
+print(full_name)
+# "Aang Airbender"
+
+
+PARAMETERS VS ARGUMENTS
+Parameters are the names used for inputs when defining a function. Arguments are the names of the inputs supplied when a function is called.
+
+To reiterate, arguments are the actual values that go into the function, say 42.0, "the dark knight", or True. Parameters are the names we use in the function definition to refer to those values, which at the time of writing the function, could be anything.
+
+That said, it is important to understand that this is all semantics, and frankly developers are really lazy with these definitions. You'll often hear the words arguments and parameters used interchangeably.
+
+# a and b are parameters
+def add(a, b):
+    return a + b
+
+# 5 and 6 are arguments
+sum = add(5, 6)
+
+
+
+DEFAULT VALUES FOR FUNCTION ARGUMENTS
+Python has a way to specify a default value for function arguments. This can be convenient if a function has arguments that are essentially "optional", and you as the function creator want to use a specific default value in case the caller doesn't provide one.
+
+A default value is created by using the assignment (=) operator in the function signature.
+
+def get_greeting(email, name="there"):
+    print("Hello", name, "welcome! You've registered your email:", email)
+
+
+get_greeting("lane@example.com", "Lane")
+# Hello Lane welcome! You've registered your email: lane@example.com
+
+
+get_greeting("lane@example.com")
+# Hello there welcome! You've registered your email: lane@example.com
+
+
+If the second parameter is omitted, the default "there" value will be used in its place. As you may have guessed, for this structure to work, optional arguments that have defaults specified come after all the required arguments.
+
+ASSIGNMENT
+Complete both the get_punched and get_slashed functions. They should each take 2 arguments:
+
+health: An integer
+armor: An integer
+Change the functions so if no armor argument is passed, armor defaults to 0.
+
+Each attack does a different amount of damage. Getting punched does 50 damage. Getting slashed does 100 damage. The armor should absorb some of the attack by subtracting from the damage. The rest of the damage should be applied to the health. Return a single integer, the health left over after the attack.
+
+
+
