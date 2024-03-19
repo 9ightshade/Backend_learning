@@ -1,58 +1,27 @@
 from main import *
 
 run_cases = [
-    (1000, 100, 900),
-    (900, 60, 840),
+    (500, 1000, "incorrect amount"),
+    (800, 800, "correct amount"),
 ]
 
 submit_cases = run_cases + [
-    (840, 10, 830),
-    (830, 3, 827),
-    (0, 0, 0),
-    (1, 1, 0),
-    (100, 2, 98),
-    (2500, 3, 2497),
+    (1500, 1000, "incorrect amount"),
+    (200, 200, "correct amount"),
 ]
 
-"""
-run_cases = [
-    (0, 100, 100),
-    (100, 200, 300),
-]
-
-submit_cases = run_cases + [
-    (300, 300, 600),
-    (600, 50, 650),
-    (0, 0, 0),
-    (1, 1, 2),
-    (100, -50, 50),
-]
 
 def test(input1, input2, expected_output):
     print("---------------------------------")
     print(f"Inputs: {input1}, {input2}")
     print(f"Expecting: {expected_output}")
-    result = update_player_score(input1, input2)
+    result = check_swords_for_army(input1, input2)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
         return True
     print("Fail")
     return False
-
-"""
-def test(current_health, damage, expected_output):
-    print("---------------------------------")
-    print(f"Inputs: {current_health}, {damage}")
-    print(f"Expecting: {expected_output}")
-    result = get_hurt(current_health, damage)
-    print(f"Actual: {result}")
-    if result == expected_output:
-        print("Pass")
-        return True
-    print("Fail")
-    return False
-
 
 
 def main():

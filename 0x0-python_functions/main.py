@@ -1,18 +1,16 @@
 """
-def calculate_damage(sword, arrow, spear, dagger, fire):
-    total_damage = sword + arrow + spear + dagger + fire
-    average_damage = total_damage/5
-    return total_damage,average_damage
-
-def update_player_score(current_score, increment):
-    current_score = current_score + increment
-    return current_score
+def compare_heights(edward_height, alphonse_height, winry_height, mustang_height):
+    is_mustang_edward_same = mustang_height == edward_height
+    is_alphonse_edward_same = alphonse_height == edward_height
+    is_winry_alphonse_same = winry_height == alphonse_height
+    return is_mustang_edward_same,is_alphonse_edward_same,is_winry_alphonse_same
     pass
 """
-def get_hurt(current_health, damage):
-    current_health -= damage
-    #alternatively we can do this
-    #current_health = current_health - damage
-    return current_health
+def check_swords_for_army(number_of_swords, number_of_soldiers):
+    if number_of_swords == number_of_soldiers:
+        return "correct amount"
+    if number_of_swords != number_of_soldiers:
+        return "incorrect amount"
+
     pass
 
