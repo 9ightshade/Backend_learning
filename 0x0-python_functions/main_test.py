@@ -1,13 +1,18 @@
 from main import *
 
 run_cases = [
-    (500, 1000, "incorrect amount"),
-    (800, 800, "correct amount"),
+    (17, 18, False),
+    (20, 25, True),
 ]
 
 submit_cases = run_cases + [
-    (1500, 1000, "incorrect amount"),
-    (200, 200, "correct amount"),
+    (1, 0, False),
+    (16, 13, True),
+    (5, 5, True),
+    (1, 1, False),
+    (20, 20, True),
+    (15, 10, True),
+    (2, 3, False),
 ]
 
 
@@ -15,7 +20,7 @@ def test(input1, input2, expected_output):
     print("---------------------------------")
     print(f"Inputs: {input1}, {input2}")
     print(f"Expecting: {expected_output}")
-    result = check_swords_for_army(input1, input2)
+    result = does_attack_hit(input1, input2)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
