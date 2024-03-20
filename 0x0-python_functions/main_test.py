@@ -1,26 +1,26 @@
 from main import *
 
 run_cases = [
-    (17, 18, False),
-    (20, 25, True),
+    (2, 5),
+    (3, 15),
+    (4, 30),
 ]
 
 submit_cases = run_cases + [
-    (1, 0, False),
-    (16, 13, True),
-    (5, 5, True),
-    (1, 1, False),
-    (20, 20, True),
-    (15, 10, True),
-    (2, 3, False),
+    (1, 0),
+    (5, 50),
+    (7, 105),
+    (10, 225),
+    (15, 525),
+    (20, 950),
 ]
 
 
-def test(input1, input2, expected_output):
+def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}, {input2}")
+    print(f"Inputs: {input1}")
     print(f"Expecting: {expected_output}")
-    result = does_attack_hit(input1, input2)
+    result = calculate_experience_points(input1)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
