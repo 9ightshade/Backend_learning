@@ -2,35 +2,83 @@ from main import *
 
 run_cases = [
     (
-        ["sword", "dagger"],
-        ["bracers", "helmet"],
-        ["feather", "iron bars"],
-        (["sword", "dagger", "bracers", "helmet", "feather", "iron bars"]),
+        [
+            "Rivendale",
+            "The Morgoth Mountains",
+            "The Lonely Island",
+            "Mordia",
+            "Mordane",
+            "Gondolin",
+        ],
+        [
+            "The Morgoth Mountains",
+            "The Lonely Island",
+            "Mordia",
+        ],
     ),
 ]
 
 submit_cases = run_cases + [
     (
-        ["lance"],
-        ["shield"],
-        ["potions"],
-        (["lance", "shield", "potions"]),
+        [
+            "Pogsmeade",
+            "Dogwarts",
+            "The Leaky Pot",
+            "The Screaming Hut",
+        ],
+        [
+            "Dogwarts",
+        ],
     ),
     (
-        ["bow", "staff"],
-        ["breastplate"],
-        ["scrolls", "bedroll"],
-        (["bow", "staff", "breastplate", "scrolls", "bedroll"]),
+        [
+            "Midgard",
+            "Cosmo Canyon",
+            "Nibelheim",
+            "Costa del Sol",
+            "Pallet Town",
+            "Viridian City",
+            "Salamandastron",
+            "Redwall Abbey",
+            "Fisherman's Horizon",
+            "Waterdeep",
+            "Elturel",
+            "Candlekeep",
+            "Chult",
+            "Eorzea",
+            "Ratchet",
+            "Orgrimmar",
+            "Stormwind",
+            "Shattrath",
+            "Dalaran",
+        ],
+        [
+            "Cosmo Canyon",
+            "Nibelheim",
+            "Costa del Sol",
+            "Pallet Town",
+            "Viridian City",
+            "Salamandastron",
+            "Redwall Abbey",
+            "Fisherman's Horizon",
+            "Waterdeep",
+            "Elturel",
+            "Candlekeep",
+            "Chult",
+            "Eorzea",
+            "Ratchet",
+            "Orgrimmar",
+            "Stormwind",
+        ],
     ),
-    ([], [], [], ([])),
 ]
 
 
-def test(input1, input2, input3, expected_output):
+def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}, {input2}, {input3}")
+    print(f"Input: {input1}")
     print(f"Expecting: {expected_output}")
-    result = concatenate_favorites(input1, input2, input3)
+    result = trim_strongholds(input1)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")

@@ -1,5 +1,7 @@
-def concatenate_favorites(favorite_weapons, favorite_armor, favorite_items):
-    favourites = favorite_weapons + favorite_armor + favorite_items
-    return favourites
+def trim_strongholds(strongholds):
+    del strongholds[0]
+    del strongholds[-2:]
+    return strongholds
+    
     pass
 
