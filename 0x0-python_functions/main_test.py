@@ -1,26 +1,36 @@
 from main import *
 
 run_cases = [
-    (2, 5),
-    (3, 15),
-    (4, 30),
+    (
+        ["sword", "dagger"],
+        ["bracers", "helmet"],
+        ["feather", "iron bars"],
+        (["sword", "dagger", "bracers", "helmet", "feather", "iron bars"]),
+    ),
 ]
 
 submit_cases = run_cases + [
-    (1, 0),
-    (5, 50),
-    (7, 105),
-    (10, 225),
-    (15, 525),
-    (20, 950),
+    (
+        ["lance"],
+        ["shield"],
+        ["potions"],
+        (["lance", "shield", "potions"]),
+    ),
+    (
+        ["bow", "staff"],
+        ["breastplate"],
+        ["scrolls", "bedroll"],
+        (["bow", "staff", "breastplate", "scrolls", "bedroll"]),
+    ),
+    ([], [], [], ([])),
 ]
 
 
-def test(input1, expected_output):
+def test(input1, input2, input3, expected_output):
     print("---------------------------------")
-    print(f"Inputs: {input1}")
+    print(f"Inputs: {input1}, {input2}, {input3}")
     print(f"Expecting: {expected_output}")
-    result = calculate_experience_points(input1)
+    result = concatenate_favorites(input1, input2, input3)
     print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
