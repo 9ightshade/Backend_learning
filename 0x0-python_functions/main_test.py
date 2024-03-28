@@ -2,84 +2,30 @@ from main import *
 
 run_cases = [
     (
-        [
-            "Rivendale",
-            "The Morgoth Mountains",
-            "The Lonely Island",
-            "Mordia",
-            "Mordane",
-            "Gondolin",
-        ],
-        [
-            "The Morgoth Mountains",
-            "The Lonely Island",
-            "Mordia",
-        ],
+        ["Shortsword", "Healing Potion", "Iron Breastplate", "Kite Shield"],
+        ["Kite Shield", "Iron Breastplate", "Healing Potion", "Shortsword"],
     ),
+    ([1, 2, 300, 4, 5], [5, 4, 300, 2, 1]),
 ]
 
 submit_cases = run_cases + [
+    ([], []),
+    (["a"], ["a"]),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]),
     (
-        [
-            "Pogsmeade",
-            "Dogwarts",
-            "The Leaky Pot",
-            "The Screaming Hut",
-        ],
-        [
-            "Dogwarts",
-        ],
+        ["apple", "banana", "cherry", "date", "elderberry"],
+        ["elderberry", "date", "cherry", "banana", "apple"],
     ),
-    (
-        [
-            "Midgard",
-            "Cosmo Canyon",
-            "Nibelheim",
-            "Costa del Sol",
-            "Pallet Town",
-            "Viridian City",
-            "Salamandastron",
-            "Redwall Abbey",
-            "Fisherman's Horizon",
-            "Waterdeep",
-            "Elturel",
-            "Candlekeep",
-            "Chult",
-            "Eorzea",
-            "Ratchet",
-            "Orgrimmar",
-            "Stormwind",
-            "Shattrath",
-            "Dalaran",
-        ],
-        [
-            "Cosmo Canyon",
-            "Nibelheim",
-            "Costa del Sol",
-            "Pallet Town",
-            "Viridian City",
-            "Salamandastron",
-            "Redwall Abbey",
-            "Fisherman's Horizon",
-            "Waterdeep",
-            "Elturel",
-            "Candlekeep",
-            "Chult",
-            "Eorzea",
-            "Ratchet",
-            "Orgrimmar",
-            "Stormwind",
-        ],
-    ),
+    (["hello", "world"], ["world", "hello"]),
 ]
 
 
-def test(input1, expected_output):
+def test(input, expected_output):
     print("---------------------------------")
-    print(f"Input: {input1}")
-    print(f"Expecting: {expected_output}")
-    result = trim_strongholds(input1)
-    print(f"Actual: {result}")
+    print(f"Input array: {input}")
+    print(f"Expected reversed array: {expected_output}")
+    result = reverse_array(input)
+    print(f"Actual reversed array: {result}")
     if result == expected_output:
         print("Pass")
         return True
