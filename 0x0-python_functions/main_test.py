@@ -1,31 +1,26 @@
 from main import *
 
 run_cases = [
-    (
-        ["Shortsword", "Healing Potion", "Iron Breastplate", "Kite Shield"],
-        ["Kite Shield", "Iron Breastplate", "Healing Potion", "Shortsword"],
-    ),
-    ([1, 2, 300, 4, 5], [5, 4, 300, 2, 1]),
+    ([1, 7, 2, 5, 3, 4], (4, 2)),
+    ([0, 99, 2, 33, 61, 44, 9, 10, 12, 240, 35, 9082, 1234], (5, 8)),
 ]
 
 submit_cases = run_cases + [
-    ([], []),
-    (["a"], ["a"]),
-    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]),
-    (
-        ["apple", "banana", "cherry", "date", "elderberry"],
-        ["elderberry", "date", "cherry", "banana", "apple"],
-    ),
-    (["hello", "world"], ["world", "hello"]),
+    ([], (0, 0)),
+    ([1, 3, 5, 7, 9], (5, 0)),
+    ([2, 4, 6, 8, 10], (0, 5)),
+    ([1], (1, 0)),
+    ([2], (0, 1)),
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (5, 5)),
 ]
 
 
-def test(input, expected_output):
+def test(input1, expected_output):
     print("---------------------------------")
-    print(f"Input array: {input}")
-    print(f"Expected reversed array: {expected_output}")
-    result = reverse_array(input)
-    print(f"Actual reversed array: {result}")
+    print(f"Inputs: {input1}")
+    print(f"Expecting: {expected_output}")
+    result = get_odds_and_evens(input1)
+    print(f"Actual: {result}")
     if result == expected_output:
         print("Pass")
         return True
